@@ -54,3 +54,19 @@ route::get('/user/view-form',[backendcontroller::class, 'create_user']);//->midd
 route::delete('/user-delete/{id}',[backendcontroller::class, 'delete_user']);
 route::get('/user-edit/{id}',[backendcontroller::class, 'edit_user']);
 route::put('/user-update/{id}',[backendcontroller::class, 'update_user']);
+
+//bagian dimana untuk crud berita
+route::get('berita/view-berita',[backendcontroller::class, 'view_berita']);
+route::post('/user/view',[backendcontroller::class, 'store_user']);
+route::get('/user/view-form',[backendcontroller::class, 'create_user']);//->middleware('auth','must-admin');
+route::delete('/user-delete/{id}',[backendcontroller::class, 'delete_user']);
+route::get('/user-edit/{id}',[backendcontroller::class, 'edit_user']);
+route::put('/user-update/{id}',[backendcontroller::class, 'update_user']);
+
+//bagian dimana untuk crud gallery
+route::get('gallery/view-gallery',[backendcontroller::class, 'view_gallery']);
+route::post('/gallery/view-gallery',[backendcontroller::class, 'store_gallery']);
+route::get('/gallery/gallery-form',[backendcontroller::class, 'create_gallery']);//->middleware('auth','must-admin');
+route::delete('/gallery-delete/{id}',[backendcontroller::class, 'delete_gallery']);
+route::get('/gallery-edit/{id}',[backendcontroller::class, 'edit_gallery']);
+route::put('/gallery-update/{id}',[backendcontroller::class, 'update_gallery']);

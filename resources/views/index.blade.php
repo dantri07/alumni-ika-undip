@@ -161,6 +161,64 @@
       </div>
     </div>
 
+    <!--ehhe-->
+    <div class="container">
+        <div class="row">
+          <div class="col-lg-5 pr-md-5 pr-sm-0 feature-4">
+            <h2 class="mt-0 heading-border-top mb-3 font-weight-normal">Tentang Ika Undip</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam et consectetur diam. Sed ultricies ultricies nisl at lacinia. Fusce sodales pulvinar ante, non eleifend massa rutrum at. Sed eu euismod tortor. Nulla vel dictum dui. Curabitur sit amet diam viverra, mattis ligula elementum, ultrices quam. Sed consectetur, erat in efficitur volutpat, nibh sapien accumsan orci, in euismod metus nisl egestas arcu.</p>
+          </div>
+          <div class="col-lg-7">
+            <div class="images">
+              <img class="img1 img-fluid" src="images/k1.png">
+            </div>
+          </div>
+          
+        </div>
+      </div>  
+    <!--ehhe part2-->
+    <div class="container">
+        <div class="row">
+          <div class="col-lg-7">
+            <div class="images">
+              <img class="img1 img-fluid" src="images/k1.png">
+            </div>
+          </div>
+          <div class="col-lg-5 pr-md-5 pr-sm-0 feature-4">
+            <h2 class="mt-0 heading-border-top mb-3 font-weight-normal">Tentang Ika Undip</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam et consectetur diam. Sed ultricies ultricies nisl at lacinia. Fusce sodales pulvinar ante, non eleifend massa rutrum at. Sed eu euismod tortor. Nulla vel dictum dui. Curabitur sit amet diam viverra, mattis ligula elementum, ultrices quam. Sed consectetur, erat in efficitur volutpat, nibh sapien accumsan orci, in euismod metus nisl egestas arcu.</p>
+          </div> 
+        </div>
+      </div> 
+    <!--end of hehe-->
+    <!--nvm lol-->
+    <section class="pb_section bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-md">
+            <div class="media pb_media_v2 d-block text-center mb-3">
+              <div class="media-body">
+                <h3 class="mt-0 pb_font-20">Visi</h3>
+                <p>menjadi politeknik generasi baru yang bermutu, adaptif, inovatif, dan
+                  bermitra erat dengan industri dan masyarakat untuk mendukung Indonesia Maju dan Sejahtera 2045.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="media pb_media_v2 d-block text-center  mb-3">
+              <div class="media-body">
+                <h3 class="mt-0 pb_font-20">Misi</h3>
+                <p>Aktif dalam proses kreasi, penyebaran dan penerapan sains dan teknologi
+                  melalui layanan pendidikan tinggi vokasi dan penelitian terapan yang bermutu, terbuka, relevan, dan berkolaborasi erat
+                  dengan masyarakat dan industri dengan penerapan tata kelola institusi yang baik
+                  untuk kehidupan bangsa yang lebih baik.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--maybe actual now-->
     <div class="site-section">
       <div class="container">
         <div class="row justify-content-center mb-5">

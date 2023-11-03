@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\models\user;
+use App\models\gallery;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 
 
 class backendcontroller extends Controller
@@ -39,12 +41,14 @@ class backendcontroller extends Controller
 
     public function edit_user(Request $request, $id)
     {
+        
         $user = user::findOrFail($id); 
         return view ('/user/user-edit', ['user' => $user]);
+        // itu yang user itu nama panggilan dan di user-edit file itu panggil juga sama goblok
     }
     public function update_user (Request $request, $id)
     {
-        $user= user::findOrFail($id);
+        $user = user::findOrFail($id);
         $user -> id = $request -> id;
         $user -> name = $request->name;
         $user -> email = $request -> email;
@@ -61,5 +65,93 @@ class backendcontroller extends Controller
         return redirect('/user/view');
 
     }
+
+//---------Berita---------------------------
+public function view_berita() {
+    $view = user::all();
+ 
+    return view ('berita/view-berita', ['nama'=> $view]);
+                //diatas (student itu nama file), nama = panggilan untuk di file students atau tersehrah)
+}
+
+
+//---------gallery---------------------------
+public function view_gallery() {
+    $view = gallery::all();
+ 
+    return view ('gallery/view-gallery', ['nama'=> $view]);
+                //diatas (student itu nama file), nama = panggilan untuk di file students atau tersehrah)
+}
+
+    public function create_gallery()
+    {
+        return view ('gallery/gallery-form');
+    }
+
+    public function store_gallery(Request $request)
+    {   
+        $newName = '';
+        if($request->file('photo'))
+        {
+            $extension = $request->file('photo')->getClientOriginalExtension();
+            $newName = $request->title.'.'.$extension;
+            $request->file('photo')->storeAs('photo', $newName);
+        }
+
+            $request['images'] = $newName;
+            $view = gallery::create($request->all());
+        
+            return redirect('/gallery/view-gallery');
+          
+    }
+
+    public function edit_gallery(Request $request, $id)
+    {
+        
+        $gallery = gallery::findOrFail($id); 
+        return view ('/gallery/gallery-edit', ['gallery' => $gallery]);
+        // itu yang user itu nama panggilan dan di user-edit file itu panggil juga sama goblok
+    }
+
+    public function update_gallery (Request $request, $id)
+    {
+
+        $gallery = gallery::findOrFail($id);
+        $newName = '';
+        
+        if ($gallery->images) {
+            Storage::delete($gallery->images);
+        }
+
+        if($request->file('photo'))
+        {
+            $extension = $request->file('photo')->getClientOriginalExtension();
+            $newName = $request->title.'.'.$extension;
+            $request->file('photo')->storeAs('photo', $newName);
+        }
+
+            $request['images'] = $newName;
+
+        $gallery -> title = $request->title;
+        $gallery -> description = $request -> description;
+        $gallery -> tanggal = $request -> tanggal;
+        $gallery -> type = $request -> type;
+        $gallery -> images = $request -> images;
+        $gallery -> save();
+        return redirect('/gallery/view-gallery');
+    }
+
+    public function delete_gallery($id)
+    {
+        $deletedgallery = gallery::findOrFail($id);
+        if ($deletedgallery->images) {
+            Storage::delete($deletedgallery->images);
+        }
+        $deletedgallery->delete();
+        
+        return redirect('/gallery/view-gallery');
+
+    }
+    
 }
 

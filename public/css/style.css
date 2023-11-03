@@ -1219,7 +1219,7 @@ h1, h2, h3, h4, h5,
     transform: scale(1.05); }
 
 .overlap-section {
-  margin-top: -150px;
+  margin-top:-150px;
   position: relative;
   z-index: 9; }
 
@@ -1247,13 +1247,17 @@ h1, h2, h3, h4, h5,
       margin-left: 0px; } }
 
 .overlap-section {
-  margin-top: -100px; }
+  margin-top: 100px;
+  margin-bottom:140px; }
+  <!--yessirrr-->
   .feature-2, .free-quote, .feature-3 {
    
     padding: 30px 50px;
     color: rgba(255, 255, 255, 0.6);
     font-size: 15px; }
-
+.feature-1{
+  margin-right : 20px;
+}
 .feature-1, .free-quote, .feature-3 {
   background: #f89d13;
   padding: 30px 50px;
@@ -1311,8 +1315,13 @@ h1, h2, h3, h4, h5,
       font-style: italic; }
 
 .feature-3 {
-  background: #e18a07; }
+  background: #e18a07;
+  margin-right: 10px;}
 
+.feature-4{
+  margin-bottom: 100px;
+  margin-top:100px;}
+   
 .border-primary {
   position: relative; }
   .border-primary h2 {

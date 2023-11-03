@@ -3,8 +3,9 @@
 <br>
 <div class="content">
   <div class="title_area">
-      <h3>Input <span>Data User</span></h3>
-  </div>
+      <h3>Input <span>Data Log Activity</span></h3>
+</div>
+
 <?php 
 	///include 'message.php';
 ?>
@@ -57,4 +58,4 @@
 </div>
 </div>
       <div class='content'></div>
- @endsection
+@endsection

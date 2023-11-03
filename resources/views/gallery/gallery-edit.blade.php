@@ -37,54 +37,67 @@
 <br>
 
 <div class="card_content">
-    <form action="/user-update/{{$user->id}}" method="post">
+    <form action="/gallery-update/{{$gallery->id}}" method="post" enctype="multipart/form-data">
         @csrf
         @method('PUT')
         <table>
       <!------------------------------------------------------------------------------------->
           <tr>
               <td class="label1">ID</td>
-              <td><input type="text" name="id" class="css_input1" value="{{$user->id}}"></td>
+              <td><input type="text" name="id" class="css_input1" value="{{$gallery->id}}"></td>
           </tr>
       <!------------------------------------------------------------------------------------->        
           <tr>
-              <td class="label1">Name</td>
-              <td><input type="text" name="name" class="css_input1" value="{{$user->name}}"></td>
+              <td class="label1">Title</td>
+              <td><input type="text" name="title" class="css_input1" value="{{$gallery->title}}"></td>
           </tr>
       <!------------------------------------------------------------------------------------->
           <tr>
-              <td class="label1">Email</td>
+              <td class="label1">Descripsi</td>
         <td>
-        <input type="text" name="email" class="css_input1" value="{{$user->email}}">
+        <textarea  rows="4", cols="54"  name="description" style="resize:none" class="css_input1" value="{{$gallery->description}}" ></textarea>
         </td>
           </tr>
-      <!------------------------------------------------------------------------------------->
+      <!-------------------------- <td><td><td>
+                <img src="{{asset('storage/photo/' .$gallery->images)}}" width="500px">
+</td></td></td>----------------------------------------------------------->
+      
       <!------------------------------------------------------------------------------------->
       <tr>
               <td class="label1">Password</td>
         <td>
-        <input type="password" name="pasword" class="css_input1">
+        <input type="date" name="tanggal" class="css_input1" value="{{$gallery->tanggal}}" >
         </td>
           </tr>
       <!------------------------------------------------------------------------------------->
       <tr>
-              <td class="label1">Role_id</td>
+              <td class="label1">Type</td>
               <td>
-              <select name="role_id" id="role_id" class="form-control" required>
-                        <option value="{{$user->role_id}}">{{$user->role_id}}</option>
-                        @if ($user->role_id =='admin' || 'Admin')
-                        <option value="alumni">Alumni</option>
+              <select name="type" id="type" class="form-control" required>
+                        <option value="{{$gallery->type}}">{{$gallery->type}}</option>
+                        @if ($gallery->type =='photo' || 'Photo')
+                        <option value="video">Video</option>
                         @else
-                        <option value="admin">Admin</option>
+                        <option value="photo">Photo</option>
                         @endif
                     </select>
               </td>
           </tr>
+        <!------------------------------------------------------------------------------------->
+          <tr>
+            <td for="image" class="label1">File</td>
+            <td>
+            <div class="mb-3 input-group">
+                <label for="image" class="form-label"></label>
+                <input class="form-control" type="file"  name="photo" id="photo">
+            </div>
+            </td>
+        </tr>
       <!------------------------------------------------------------------------------------->
           <tr>
               <td>&nbsp;</td>
               <td>
-                  <a href="/user/view" class="btn_cancel"> <i class="fas fa-chevron-circle-left"></i> Kembali</a>
+                  <a href="/gallery/view-gallery" class="btn_cancel"> <i class="fas fa-chevron-circle-left"></i> Kembali</a>
                   <button class="button_simpan" type="submit"><i class="fas fa-save"></i> Simpan </button>
               </td>
           </tr>

@@ -1,10 +1,12 @@
 @extends('layout1')
 @section('content')
+      
+      <div class="content">
+	<div class="title_area">
+		<h3><i class="fas fa-image"></i> List <span>Data  Gallery</span></h3>
+	</div>
 <br>
-<div class="content">
-  <div class="title_area">
-      <h3>Input <span>Data User</span></h3>
-  </div>
+
 <?php 
 	///include 'message.php';
 ?>
@@ -12,7 +14,7 @@
 <br><br><br>
 
 <div class="card_content">
-	<a href="/user/view-form" class="btn_tambah"><i class="fas fa-user-plus"></i> Tambah Data</a>
+	<a href="/gallery/gallery-form" class="btn_tambah"><i class="fas fa-image -plus"></i> Tambah Data</a>
 	
 	<div class="search-box-container">
 		<input type="text" id="myInput_contoh" onkeyup="myFunction()" class="css_input1" placeholder="Search for names..">
@@ -24,25 +26,32 @@
 		<thead>		
 				<tr>
 					<th>No</th>
-					<th>Kode_user</th>
-					<th>nama</th>
-					<th>email</th>
-					<th>password</th>
-          <th>Action</th>
+          <th>Image</th>
+					<th>Title</th>
+					<th>Description</th>
+					<th>Date</th>
+					<th>type</th>
+          <th>action</th>
+
 				</tr>
 		</thead>
     <tbody>
                 @foreach ($nama as $data)
                 <tr>
                     <td>{{$loop->iteration}}</td>
-                    <td>{{$data->id}}</td>
-                    <td>{{$data->name}}</td>
-                    <td>{{$data->email}}</td>
-					<td>{{$data->password}}</td>
-
                     <td>
-                      <a href="/user-edit/{{$data ->id}}" class="btn btn-secondary">Edit</a>
-                      <form style="display :inline-block" action="/user-delete/{{$data->id}}" method="post">
+                    <img src="{{asset('storage/photo/' .$data->images)}}" width="100px">
+                    </td>
+                  
+                  
+                    <td>{{$data->title}}</td>
+                    <td>{{$data->description}}</td>
+                    <td>{{$data->tanggal}}
+                    <td>{{$data->type}}</td>
+
+                  <td>
+                      <a href="/gallery-edit/{{$data ->id}}" class="btn btn-secondary">Edit</a>
+                      <form style="display :inline-block" action="/gallery-delete/{{$data->id}}" method="post">
                       @csrf
                       @method('delete')
                       <button type="submit" class="fas fa-sign-out-alt btn-primary">Delete</button>
@@ -57,4 +66,4 @@
 </div>
 </div>
       <div class='content'></div>
- @endsection
+@endsection
