@@ -3,7 +3,7 @@
   <head>
   <link rel="icon" href="images/logo.png">
   <title>Login Page</title>
-    <link rel="icon web" href="Logo.png">
+    <link rel="icon web" href="Logo.png" class="responsive">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style_login.css">

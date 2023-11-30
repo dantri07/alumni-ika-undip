@@ -41,11 +41,11 @@
 					<td>{{$data->password}}</td>
 
                     <td>
-                      <a href="/user-edit/{{$data ->id}}" class="btn btn-secondary">Edit</a>
+                      <a href="/user-edit/{{$data ->id}}" class="btn btn-edit">Edit</a>
                       <form style="display :inline-block" action="/user-delete/{{$data->id}}" method="post">
                       @csrf
                       @method('delete')
-                      <button type="submit" class="fas fa-sign-out-alt btn-primary">Delete</button>
+                      <button type="submit" class="fas fa-sign-out-alt btn-hapus">Delete</button>
 
                       </form>
                     </td>

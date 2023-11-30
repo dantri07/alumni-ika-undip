@@ -2,21 +2,11 @@
 @section('title', 'Student Add')
 
 @section('content')
-    <div class="site-blocks-cover inner-page-cover overlay" style="background-image: url(images/hero_bg_1.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
-      <div class="container">
-        <div class="row align-items-center justify-content-center text-center">
-
-          <div class="col-md-8" data-aos="fade-up" data-aos-delay="400">
-            <h1 class="text-white font-weight-light text-uppercase font-weight-bold">Contact Us</h1>
-            <p class="breadcrumb-custom"><a href="index.html">Home</a> <span class="mx-2">&gt;</span> <span>Contact</span></p>
-          </div>
-        </div>
-      </div>
-    </div>  
-
-    
-    <div class="site-section bg-light">
-      <div class="container">
+    <div class="site-section bg-light ">
+      <div class="container mt-5">
+      <div class="text-left pb-1 border-primary mb-3 col-mt-12">
+              <h2 class="text-primary">Contact Us</h2>
+            </div>
         <div class="row">
     <!---dwada-->
           <div class="col-md-5">

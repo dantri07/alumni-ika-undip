@@ -41,7 +41,7 @@
     </div>
     <!--Header-->
     @yield('header')
-    <header class="site-navbar py-3" role="banner">
+    <header class="site-navbar " role="banner">
 
       <div class="top-bar">
       <div class="container">
@@ -57,19 +57,15 @@
                 <li><a href="/">Home</a></li>
                 <li><a href="/about">About Us</a></li>
                 <li class="has-children">
-                  <a href="services.html">Services</a>
+                  <a href="#">Gallery</a>
                   <ul class="dropdown">
-                    <li><a href="#">Air Freight</a></li>
-                    <li><a href="#">Ocean Freight</a></li>
-                    <li><a href="#">Ground Shipping</a></li>
-                    <li><a href="#">Warehousing</a></li>
-                    <li><a href="#">Storage</a></li>
+                    <li><a href="#">Gallery Photo</a></li>
+                    <li><a href="#">Gallery Video</a></li>
                   </ul>
                 </li>
-                <li><a href="industries.html">Industries</a></li>
-                <li><a href="/">Blog</a></li>
+                <li><a href="#">Membership</a></li>
+                <li><a href="#">News</a></li>
                 <li><a href="/contact">Contact</a></li>
-                <li><a href="/careeer">Career</a></li>
                 <li><a href="/login">Login</a></li>
               </ul>
             </nav>
@@ -85,6 +81,7 @@
       </div>
       
     </header>
+
     @yield('content')
 <!--Isi disni-->
       <!--Footer-->
@@ -100,7 +97,6 @@
                   <li>ALamat  : Jl. Lembang No.47, RT.11/RW.7, Menteng, Kec. Menteng, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10310</li>
                   <li>No Hp   : +6212344990012</li>
                   <li yhref="#">Email   : Ikaundip@ac.id</li>
-                  <li><a href="#">Contact Us</a></li>
                 </ul>
               </div>
             </div>

@@ -53,7 +53,7 @@
           </tr>
       <!------------------------------------------------------------------------------------->
           <tr>
-              <td class="label1">Descripsi</td>
+              <td class="label1">Deskripsi</td>
         <td>
         <textarea  rows="4", cols="54"  name="description" style="resize:none" class="css_input1" value="{{$gallery->description}}" ></textarea>
         </td>
@@ -64,7 +64,7 @@
       
       <!------------------------------------------------------------------------------------->
       <tr>
-              <td class="label1">Password</td>
+              <td class="label1">Date</td>
         <td>
         <input type="date" name="tanggal" class="css_input1" value="{{$gallery->tanggal}}" >
         </td>

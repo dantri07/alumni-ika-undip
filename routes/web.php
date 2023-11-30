@@ -57,11 +57,11 @@ route::put('/user-update/{id}',[backendcontroller::class, 'update_user']);
 
 //bagian dimana untuk crud berita
 route::get('berita/view-berita',[backendcontroller::class, 'view_berita']);
-route::post('/user/view',[backendcontroller::class, 'store_user']);
-route::get('/user/view-form',[backendcontroller::class, 'create_user']);//->middleware('auth','must-admin');
-route::delete('/user-delete/{id}',[backendcontroller::class, 'delete_user']);
-route::get('/user-edit/{id}',[backendcontroller::class, 'edit_user']);
-route::put('/user-update/{id}',[backendcontroller::class, 'update_user']);
+route::post('/berita/view-berita',[backendcontroller::class, 'store_berita']);
+route::get('/berita/berita-form',[backendcontroller::class, 'create_berita']);//->middleware('auth','must-admin');
+route::delete('/berita-delete/{id}',[backendcontroller::class, 'delete_berita']);
+route::get('/berita-edit/{id}',[backendcontroller::class, 'edit_berita']);
+route::put('/berita-update/{id}',[backendcontroller::class, 'update_berita']);
 
 //bagian dimana untuk crud gallery
 route::get('gallery/view-gallery',[backendcontroller::class, 'view_gallery']);

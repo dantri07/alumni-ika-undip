@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\models\user;
 use App\models\gallery;
+use App\models\berita;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -68,12 +69,80 @@ class backendcontroller extends Controller
 
 //---------Berita---------------------------
 public function view_berita() {
-    $view = user::all();
+    $view = berita::all();
  
     return view ('berita/view-berita', ['nama'=> $view]);
                 //diatas (student itu nama file), nama = panggilan untuk di file students atau tersehrah)
 }
 
+public function create_berita()
+    {
+        return view ('berita/berita-form');
+    }
+
+    public function store_berita(Request $request)
+    {   
+        $newName = '';
+        if($request->file('photo'))
+        {
+            $extension = $request->file('photo')->getClientOriginalExtension();
+            $newName = $request->title.'.'.$extension;
+            $request->file('photo')->storeAs('photo', $newName);
+        }
+
+            $request['gambar'] = $newName;
+            $view = berita::create($request->all());
+        
+            return redirect('/berita/view-berita');
+          
+    }
+
+    public function edit_berita(Request $request, $id)
+    {
+        
+        $berita = berita::findOrFail($id); 
+        return view ('/berita/berita-edit', ['berita' => $berita]);
+        // itu yang user itu nama panggilan dan di user-edit file itu panggil juga sama goblok
+    }
+
+    public function update_berita (Request $request, $id)
+    {
+
+        $berita = berita::findOrFail($id);
+        $newName = '';
+        
+        if ($berita->gambar) {
+            Storage::delete($berita->gambar);
+        }
+
+        if($request->file('photo'))
+        {
+            $extension = $request->file('photo')->getClientOriginalExtension();
+            $newName = $request->title.'.'.$extension;
+            $request->file('photo')->storeAs('photo', $newName);
+        }
+
+            $request['gambar'] = $newName;
+
+        $berita -> title = $request->title;
+        $berita -> description = $request -> description;
+        $berita -> tanggal = $request -> tanggal;
+        $berita -> gambar = $request -> gambar;
+        $berita -> save();
+        return redirect('/berita/view-berita');
+    }
+
+    public function delete_berita ($id)
+    {
+        $deletedberita = berita::findOrFail($id);
+        if ($deletedberita->gambar) {
+            Storage::delete($deletedberita->gambar);
+        }
+        $deletedberita->delete();
+        
+        return redirect('/berita/view-berita');
+
+    }
 
 //---------gallery---------------------------
 public function view_gallery() {
