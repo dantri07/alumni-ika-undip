@@ -63,6 +63,14 @@ route::delete('/berita-delete/{id}',[backendcontroller::class, 'delete_berita'])
 route::get('/berita-edit/{id}',[backendcontroller::class, 'edit_berita']);
 route::put('/berita-update/{id}',[backendcontroller::class, 'update_berita']);
 
+//bagian dimana untuk crud keahlian
+route::get('keahlian/view-keahlian',[backendcontroller::class, 'view_keahlian']);
+route::post('/keahlian/view-keahlian',[backendcontroller::class, 'store_keahlian']);
+route::get('/keahlian/keahlian-form',[backendcontroller::class, 'create_keahlian']);//->middleware('auth','must-admin');
+route::delete('/keahlian-delete/{id}',[backendcontroller::class, 'delete_keahlian']);
+route::get('/keahlian-edit/{id}',[backendcontroller::class, 'edit_keahlian']);
+route::put('/keahlian-update/{id}',[backendcontroller::class, 'update_keahlian']);
+
 //bagian dimana untuk crud gallery
 route::get('gallery/view-gallery',[backendcontroller::class, 'view_gallery']);
 route::post('/gallery/view-gallery',[backendcontroller::class, 'store_gallery']);

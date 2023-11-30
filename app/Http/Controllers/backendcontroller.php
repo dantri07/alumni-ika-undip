@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\models\user;
 use App\models\gallery;
 use App\models\berita;
+use App\models\keahlian;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -143,6 +144,55 @@ public function create_berita()
         return redirect('/berita/view-berita');
 
     }
+// ------------KEAHLIAN-------------//
+public function view_keahlian() {
+    $view = keahlian::all();
+ 
+    return view ('keahlian/view-keahlian', ['nama'=> $view]);
+                //diatas (student itu nama file), nama = panggilan untuk di file students atau tersehrah)
+}
+public function create_keahlian()
+{
+    return view ('keahlian/keahlian-form');
+}
+
+public function store_keahlian(Request $request)
+{
+    $keahlian = new keahlian;
+    $keahlian -> id = $request -> id;
+    $keahlian -> keahlian = $request->keahlian;
+    $keahlian -> id_alumni = $request ->id_alumni;
+    $keahlian -> save();
+    //$view=keahlian::create($request->all()); 
+    // yang diatas yg hijau itu untuk semua data kesiman tpi karena butuh hash jdi fk you
+      return redirect('/keahlian/view-keahlian');
+      
+}
+
+public function edit_keahlian(Request $request, $id)
+{
+    
+    $keahlian = keahlian::findOrFail($id); 
+    return view ('/keahlian/keahlian-edit', ['keahlian' => $keahlian]);
+    // itu yang keahlian itu nama panggilan dan di keahlian-edit file itu panggil juga sama goblok
+}
+public function update_keahlian (Request $request, $id)
+{
+    $keahlian = keahlian::findOrFail($id);
+    $keahlian -> id = $request -> id;
+    $keahlian -> keahlian = $request->keahlian;
+    $keahlian -> id_alumni = $request -> id_alumni;
+    $keahlian -> save();
+    return redirect('/keahlian/view-keahlian');
+}
+
+public function delete_keahlian($id)
+{
+    $deletedkeahlian = keahlian::findOrFail($id);
+    $deletedkeahlian->delete();
+    return redirect('/keahlian/view-keahlian');
+
+}
 
 //---------gallery---------------------------
 public function view_gallery() {
