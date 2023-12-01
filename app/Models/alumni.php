@@ -15,7 +15,6 @@ class alumni extends Model
         'asal_institusi',
         'phone',
         'email',
-        'phone',
         'date_of_birth',
         'address',
         'id_kota',

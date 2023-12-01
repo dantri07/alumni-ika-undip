@@ -7,6 +7,7 @@ use App\models\user;
 use App\models\gallery;
 use App\models\berita;
 use App\models\keahlian;
+use App\models\alumni;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -191,6 +192,73 @@ public function delete_keahlian($id)
     $deletedkeahlian = keahlian::findOrFail($id);
     $deletedkeahlian->delete();
     return redirect('/keahlian/view-keahlian');
+
+}
+// ------------ALUMNI-------------//
+public function view_alumni() {
+    $view = alumni::all();
+ 
+    return view ('alumni/view-alumni', ['nama'=> $view]);
+                //diatas (student itu nama file), nama = panggilan untuk di file students atau tersehrah)
+}
+public function create_alumni()
+{
+    return view ('alumni/alumni-form');
+}
+
+public function store_alumni(Request $request)
+{
+    $alumni = new alumni;
+    $alumni -> id = $request -> id;
+    $alumni -> full_name = $request->full_name;
+    $alumni -> nik = $request ->nik;
+    $alumni -> asal_institusi = $request -> asal_institusi;
+    $alumni -> phone = $request->phone;
+    $alumni -> email = $request ->email;
+    $alumni -> date_of_birth = $request -> date_of_birth;
+    $alumni -> address = $request->address;
+    $alumni -> id_kota = $request ->id_kota;
+    $alumni -> instansi_pendidikan = $request -> instansi_pendidikan;
+    $alumni -> username = $request->username;
+    $alumni -> password = $request ->password;
+    $alumni -> save();
+    //$view=alumni::create($request->all()); 
+    // yang diatas yg hijau itu untuk semua data kesiman tpi karena butuh hash jdi fk you
+      return redirect('/alumni/view-alumni');
+      
+}
+
+public function edit_alumni(Request $request, $id)
+{
+    
+    $alumni = alumni::findOrFail($id); 
+    return view ('/alumni/alumni-edit', ['alumni' => $alumni]);
+    // itu yang alumni itu nama panggilan dan di alumni-edit file itu panggil juga sama goblok
+}
+public function update_alumni (Request $request, $id)
+{
+    $alumni = alumni::findOrFail($id);
+    $alumni -> id = $request -> id;
+    $alumni -> full_name = $request->full_name;
+    $alumni -> nik = $request ->nik;
+    $alumni -> asal_institusi = $request -> asal_institusi;
+    $alumni -> phone = $request->phone;
+    $alumni -> email = $request ->email;
+    $alumni -> date_of_birth = $request -> date_of_birth;
+    $alumni -> address = $request->address;
+    $alumni -> id_kota = $request ->id_kota;
+    $alumni -> instansi_pendidikan = $request -> instansi_pendidikan;
+    $alumni -> username = $request->username;
+    $alumni -> password = $request ->password;
+    $alumni -> save();
+    return redirect('/alumni/view-alumni');
+}
+
+public function delete_alumni($id)
+{
+    $deletedalumni = alumni::findOrFail($id);
+    $deletedalumni->delete();
+    return redirect('/alumni/view-alumni');
 
 }
 

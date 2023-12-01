@@ -25,7 +25,7 @@
           <tr>
               <td class="label1">id_alumni</td>
         <td>
-        <textarea  rows="4", cols="54"  name="id_alumni" style="resize:none" class="css_input1"></textarea>
+        <td><input type="text" name="id_alumni"  class="css_input1"></td>
         </td>
           </tr>
       <!------------------------------------------------------------------------------------->
