@@ -33,6 +33,7 @@
                     <th>date_of_birth</th>
 					<th>address</th>
 					<th>id_kota</th>
+                    <th>pekerjaan</th>
                     <th>status</th>
 					<th>instansi_pendidikan</th>
 					<th>username</th>
@@ -54,6 +55,7 @@
                     <td>{{$data->date_of_birth}}</td>
                     <td>{{$data->address}}</td>
                     <td>{{$data->id_kota}}</td>
+                    <td>{{$data->pekerjaan}}</td>
                     <td>{{$data->status}}</td>
                     <td>{{$data->instansi_pendidikan}}</td>
                     <td>{{$data->username}}</td>

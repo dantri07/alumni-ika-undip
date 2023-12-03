@@ -71,6 +71,22 @@ route::delete('/keahlian-delete/{id}',[backendcontroller::class, 'delete_keahlia
 route::get('/keahlian-edit/{id}',[backendcontroller::class, 'edit_keahlian']);
 route::put('/keahlian-update/{id}',[backendcontroller::class, 'update_keahlian']);
 
+//bagian dimana untuk crud keahlian
+route::get('kota/view-kota',[backendcontroller::class, 'view_kota']);
+route::post('/kota/view-kota',[backendcontroller::class, 'store_kota']);
+route::get('/kota/kota-form',[backendcontroller::class, 'create_kota']);//->middleware('auth','must-admin');
+route::delete('/kota-delete/{id}',[backendcontroller::class, 'delete_kota']);
+route::get('/kota-edit/{id}',[backendcontroller::class, 'edit_kota']);
+route::put('/kota-update/{id}',[backendcontroller::class, 'update_kota']);
+
+//bagian dimana untuk crud pengalaman
+route::get('pengalaman/view-pengalaman',[backendcontroller::class, 'view_pengalaman']);
+route::post('/pengalaman/view-pengalaman',[backendcontroller::class, 'store_pengalaman']);
+route::get('/pengalaman/pengalaman-form',[backendcontroller::class, 'create_pengalaman']);//->middleware('auth','must-admin');
+route::delete('/pengalaman-delete/{id}',[backendcontroller::class, 'delete_pengalaman']);
+route::get('/pengalaman-edit/{id}',[backendcontroller::class, 'edit_pengalaman']);
+route::put('/pengalaman-update/{id}',[backendcontroller::class, 'update_pengalaman']);
+
 //bagian dimana untuk crud alumni
 route::get('alumni/view-alumni',[backendcontroller::class, 'view_alumni']);
 route::post('/alumni/view-alumni',[backendcontroller::class, 'store_alumni']);

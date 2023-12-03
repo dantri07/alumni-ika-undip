@@ -7,6 +7,8 @@ use App\models\user;
 use App\models\gallery;
 use App\models\berita;
 use App\models\keahlian;
+use App\models\kota;
+use App\models\pengalaman;
 use App\models\alumni;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth;
@@ -194,6 +196,111 @@ public function delete_keahlian($id)
     return redirect('/keahlian/view-keahlian');
 
 }
+
+// ------------kota-------------//
+public function view_kota() {
+    $view = kota::all();
+ 
+    return view ('kota/view-kota', ['nama'=> $view]);
+                //diatas (student itu nama file), nama = panggilan untuk di file students atau tersehrah)
+}
+public function create_kota()
+{
+    return view ('kota/kota-form');
+}
+
+public function store_kota(Request $request)
+{
+    $kota = new kota;
+    $kota -> id = $request -> id;
+    $kota -> name_kota = $request->name_kota;
+    $kota -> save();
+    //$view=kota::create($request->all()); 
+    // yang diatas yg hijau itu untuk semua data kesiman tpi karena butuh hash jdi fk you
+      return redirect('/kota/view-kota');
+      
+}
+
+public function edit_kota(Request $request, $id)
+{
+    
+    $kota = kota::findOrFail($id); 
+    return view ('/kota/kota-edit', ['kota' => $kota]);
+    // itu yang kota itu nama panggilan dan di kota-edit file itu panggil juga sama goblok
+}
+public function update_kota (Request $request, $id)
+{
+    $kota = new kota;
+    $kota -> id = $request -> id;
+    $kota -> name_kota = $request->name_kota;
+    $kota -> save();
+    return redirect('/kota/view-kota');
+}
+
+public function delete_kota($id)
+{
+    $deletedkota = kota::findOrFail($id);
+    $deletedkota->delete();
+    return redirect('/kota/view-kota');
+
+}
+// ------------pengalaman-------------//
+public function view_pengalaman() {
+    $view = pengalaman::all();
+ 
+    return view ('pengalaman/view-pengalaman', ['nama'=> $view]);
+                //diatas (student itu nama file), nama = panggilan untuk di file students atau tersehrah)
+}
+public function create_pengalaman()
+{
+    return view ('pengalaman/pengalaman-form');
+}
+
+public function store_pengalaman(Request $request)
+{
+    $pengalaman = new pengalaman;
+    $pengalaman -> id = $request -> id;
+    $pengalaman -> pengalaman = $request->pengalaman;
+    $pengalaman -> jabatan = $request->jabatan;
+    $pengalaman -> id_alumni = $request ->id_alumni;
+    $pengalaman -> start = $request->start;
+    $pengalaman -> end = $request->end;
+    // $view=pengalaman::create($request->all());
+    $pengalaman -> save();
+     
+   
+    // yang diatas yg hijau itu untuk semua data kesiman tpi karena butuh hash jdi fk you
+      return redirect('/pengalaman/view-pengalaman');
+      
+}
+
+public function edit_pengalaman(Request $request, $id)
+{
+    
+    $pengalaman = pengalaman::findOrFail($id); 
+    return view ('/pengalaman/pengalaman-edit', ['pengalaman' => $pengalaman]);
+    
+}
+public function update_pengalaman (Request $request, $id)
+{
+    $pengalaman = pengalaman::findOrFail($id);
+    $pengalaman -> id = $request -> id;
+    $pengalaman -> pengalaman = $request->pengalaman;
+    $pengalaman -> jabatan = $request->jabatan;
+    $pengalaman -> id_alumni = $request ->id_alumni;
+    $pengalaman -> start = $request->start;
+    $pengalaman -> end = $request->end;
+    $pengalaman -> save();
+    return redirect('/pengalaman/view-pengalaman');
+}
+
+public function delete_pengalaman($id)
+{
+    $deletedpengalaman = pengalaman::findOrFail($id);
+    $deletedpengalaman->delete();
+    return redirect('/pengalaman/view-pengalaman');
+
+}
 // ------------ALUMNI-------------//
 public function view_alumni() {
     $view = alumni::all();
@@ -218,6 +325,8 @@ public function store_alumni(Request $request)
     $alumni -> date_of_birth = $request -> date_of_birth;
     $alumni -> address = $request->address;
     $alumni -> id_kota = $request ->id_kota;
+    $alumni -> pekerjaan = $request ->pekerjaan;
+    $alumni -> status = $request ->status;
     $alumni -> instansi_pendidikan = $request -> instansi_pendidikan;
     $alumni -> username = $request->username;
     $alumni -> password = $request ->password;
@@ -247,6 +356,8 @@ public function update_alumni (Request $request, $id)
     $alumni -> date_of_birth = $request -> date_of_birth;
     $alumni -> address = $request->address;
     $alumni -> id_kota = $request ->id_kota;
+    $alumni -> pekerjaan = $request ->pekerjaan;
+    $alumni -> status = $request ->status;
     $alumni -> instansi_pendidikan = $request -> instansi_pendidikan;
     $alumni -> username = $request->username;
     $alumni -> password = $request ->password;

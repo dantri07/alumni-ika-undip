@@ -8,50 +8,42 @@
 <br>
 
 <div class="card_content">
-    <form method="POST" action="/user/view">
+    <form method="POST" action="/pengalaman/view-pengalaman" enctype="multipart/form-data">
         @csrf
         <table>
       <!------------------------------------------------------------------------------------->
           <tr>
               <td class="label1">ID</td>
-              <td><input type="text" name="id" class="css_input1"></td>
+              <td><input type="text" name="id"  class="css_input1"></td>
           </tr>
       <!------------------------------------------------------------------------------------->        
           <tr>
-              <td class="label1">Name</td>
-              <td><input type="text" name="name" class="css_input1"></td>
+              <td class="label1">pengalaman</td>
+              <td><input type="text" name="pengalaman"  class="css_input1"></td>
+          </tr>
+      <!------------------------------------------------------------------------------------->
+      <!------------------------------------------------------------------------------------->        
+      <tr>
+              <td class="label1">jabatan</td>
+              <td><input type="text" name="jabatan"  class="css_input1"></td>
           </tr>
       <!------------------------------------------------------------------------------------->
           <tr>
-              <td class="label1">Email</td>
-        <td>
-        <input type="text" name="email" class="css_input1">
-        </td>
+              <td class="label1">id_alumni</td>
+              <td><input type="text" name="id_alumni"  class="css_input1"></td>
           </tr>
       <!------------------------------------------------------------------------------------->
-      <!------------------------------------------------------------------------------------->
-      <tr>
-              <td class="label1">Password</td>
-        <td>
-        <input type="password" name="password" class="css_input1">
-        </td>
+      <td class="label1">start</td>
+        <td><input type="date" name="start"  class="css_input1"></td>
           </tr>
-      <!------------------------------------------------------------------------------------->
-      <tr>
-              <td class="label1">Role_id</td>
-              <td>
-              <select name="role_id" id="role_id" class="form-control" required>
-                        <option value="">Select One</option>
-                        <option value="admin">Admin</option>
-                        <option value="alumni">Alumni</option>
-                    </select>
-              </td>
+        <td class="label1">end</td>
+        <td><input type="date" name="end"  class="css_input1"></td>
           </tr>
-      <!------------------------------------------------------------------------------------->
+      
           <tr>
               <td>&nbsp;</td>
               <td>
-                  <a href="/user/view" class="btn_cancel"> <i class="fas fa-chevron-circle-left"></i> Kembali</a>
+                  <a href="/pengalaman/view-pengalaman" class="btn_cancel"> <i class="fas fa-chevron-circle-left"></i> Kembali</a>
                   <button class="button_simpan" type="submit"><i class="fas fa-save"></i> Simpan </button>
               </td>
           </tr>
@@ -62,6 +54,7 @@
 </div>
 </div>
       
+
 <div class='content'></div>
 
 @endsection

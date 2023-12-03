@@ -18,6 +18,7 @@ class alumni extends Model
         'date_of_birth',
         'address',
         'id_kota',
+        'pekerjaan',
         'status',
         'instansi_pendidikan',
         'username',

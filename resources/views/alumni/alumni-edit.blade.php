@@ -1,51 +1,21 @@
-<!DOCTYPE html>
-<html>
-  <head>
-  <link rel="icon web" href="Logo.png">
-    <title>Admin</title>
-    <link rel="stylesheet" href="/assets/css/style.css">
-    <link rel="stylesheet" href="/assets/icon/css/all.min.css">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-	<!---<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> -->
-</head>
-<body>
-
-<!--------------------------------------------------------------------->
-    <input type="checkbox" id="check">
-		<header>
-    </div>
-        <a href="/logout" class="btn_logout">Logout <i class="fas fa-sign-out-alt"></i></a>
-		</header>
-        "<div class='sidebar'>
-      <label for='check'>
-          <i class='fas fa-bars' id='sidebar_btn'></i>
-          <i id='admin'>Ika Undip</i>
-        </label>
-        <p></p>
-        <a href='/user/view'><i class='fas fa-user'></i><span> Data user</span></a>
-        <a href='home.php?page=view_news'><i class='fas fa-newspaper'></i><span> Data berita</span></a>
-        <a href='home.php?page=view_news'><i class='fas fa-newspaper'></i><span> Data keahlian</span></a>
-        <a href='home.php?page=view_news'><i class='fas fa-industry'></i><span> Data Alumni</span></a>
-        <a href='home.php?page=view_trade'><i class='fas fa-tree'></i><span> Data Galeri</span></a>
-        <a href='home.php?page=view_news'><i class='fas fa-ship'></i><span> Data lorep ipsum</span></a>
-        <a href='home.php?page=view_log_activity'><i class='fas fa-book'></i><span> Log Activity</span></a>
-      </div>
+<@extends('layout1')
+@section('content')
       <!---->
       <div class="content">
   <div class="title_area">
-      <h3>Input <span>Data Log Activity</span></h3>
+      <h3>Edit <span>Data Alumni</span></h3>
   </div>
 <br>
-
+<body>
 <div class="card_content">
-    <form action="/keahlian-update/{{$keahlian->id}}" method="post" enctype="multipart/form-data">
+    <form action="/alumni-update/{{$alumni->id}}" method="post" enctype="multipart/form-data">
         @csrf
         @method('PUT')
         <table>
       <!------------------------------------------------------------------------------------->
           <tr>
               <td class="label1">ID</td>
-              <td><input type="text" name="id" class="css_input1" value="{{$keahlian->id}}"></td>
+              <td><input type="text" name="id" class="css_input1" value="{{$alumni->id}}"></td>
           </tr>
       <!------------------------------------------------------------------------------------->        
           <tr>
@@ -74,7 +44,7 @@
           <tr>
               <td class="label1">date_of_birth</td>
         <td>
-        <input type="date" name="date_of_birth" class="css_input1" value="{{$berita->date_of_brith}}" >
+        <input type="date" name="date_of_birth" class="css_input1" value="{{$alumni->date_of_brith}}" >
         </td>
         </tr>
          <!------------------------------------------------------------------------------------->
@@ -83,9 +53,24 @@
               <td class="label1">address</td>
               <td><input type="text" name="address" class="css_input1" value="{{$alumni->address}}"></td>
           </tr>
+          
           <tr>
-              <td class="label1">id_kota</td>
-              <td><input type="text" name="id_kota" class="css_input1" value="{{$alumni->id_kota}}"></td>
+    <td class="label1">id_kota</td>
+    <td>
+        <select name="id_kota" class="css_input1">
+            <option value="Kabupaten Bintan">Kabupaten Bintan</option>
+            <option value="Kabupaten Karimun">Kabupaten Karimun</option>
+            <option value="Kabupaten Kepulauan Anambas">Kabupaten Kepulauan Anambas</option>
+            <option value="Kabupaten Lingga">Kabupaten Lingga</option>
+            <option value="Kabupaten Natuna">Kabupaten Natuna</option>
+            <option value="Kota Batam">Kota Batam</option>
+            <option value="Kota Tanjung Pinang">Kota Tanjung Pinang</option>
+        </select>
+    </td>
+    </tr>
+          <tr>
+              <td class="label1">pekerjaan</td>
+              <td><input type="text" name="pekerjaan" class="css_input1" value="{{$alumni->pekerjaan}}"></td>
           </tr>
       <!------------------------------------------------------------------------------------->        
           <tr>
@@ -108,7 +93,7 @@
           <tr>
               <td>&nbsp;</td>
               <td>
-                  <a href="/gallery/view-gallery" class="btn_cancel"> <i class="fas fa-chevron-circle-left"></i> Kembali</a>
+                  <a href="/alumni/view-alumni" class="btn_cancel"> <i class="fas fa-chevron-circle-left"></i> Kembali</a>
                   <button class="button_simpan" type="submit"><i class="fas fa-save"></i> Simpan </button>
               </td>
           </tr>
@@ -119,10 +104,6 @@
 </div>
 </div> 
       
-</div>
-</div>
-</div>
-      <div class='content'></div>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    </body>
-</html>
+<div class='content'></div>
+
+@endsection

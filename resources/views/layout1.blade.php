@@ -24,7 +24,9 @@
         <a href='/user/view'><i class='fas fa-user'></i><span> Data user</span></a>
         <a href='/berita/view-berita'><i class='fas fa-newspaper'></i><span> Data Berita</span></a>
         <a href='/keahlian/view-keahlian'><i class='fas fa-newspaper'></i><span> Data keahlian</span></a>
+        <a href='/pengalaman/view-pengalaman'><i class='fas fa-newspaper'></i><span> Data pengalaman</span></a>
         <a href='/alumni/view-alumni'><i class='fas fa-graduation-cap'></i><span> Data Alumni</span></a>
+        <a href='/kota/view-kota'><i class='fas fa-graduation-cap'></i><span> Data kota</span></a>
         <a href='/gallery/view-gallery'><i class='fas fa-image'></i><span> Data Galeri</span></a>
         <a href='#'><i class='fas fa-phone'></i><span> Data Contact Us</span></a>
         <a href='#'><i class='fas fa-book'></i><span> Log Activity</span></a>

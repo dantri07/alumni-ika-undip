@@ -52,6 +52,28 @@
               <td><input type="text" name="address"  class="css_input1"></td>
           </tr>
       <!------------------------------------------------------------------------------------->
+      <!------------------------------------------------------------------------------------->        
+      <tr>
+    <td class="label1">id_kota</td>
+    <td>
+        <select name="id_kota" class="css_input1">
+            <option value="Kabupaten Bintan">Kabupaten Bintan</option>
+            <option value="Kabupaten Karimun">Kabupaten Karimun</option>
+            <option value="Kabupaten Kepulauan Anambas">Kabupaten Kepulauan Anambas</option>
+            <option value="Kabupaten Lingga">Kabupaten Lingga</option>
+            <option value="Kabupaten Natuna">Kabupaten Natuna</option>
+            <option value="Kota Batam">Kota Batam</option>
+            <option value="Kota Tanjung Pinang">Kota Tanjung Pinang</option>
+        </select>
+    </td>
+</tr>
+      <!------------------------------------------------------------------------------------->
+    <!------------------------------------------------------------------------------------->        
+        <tr>
+              <td class="label1">pekerjaan</td>
+              <td><input type="text" name="pekerjaan"  class="css_input1"></td>
+          </tr>
+      <!------------------------------------------------------------------------------------->
       <tr>
               <td class="label1">status</td>
               <td><input type="text" name="status"  class="css_input1"></td>
