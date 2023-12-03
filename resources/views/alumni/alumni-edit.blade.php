@@ -6,7 +6,7 @@
       <h3>Edit <span>Data Alumni</span></h3>
   </div>
 <br>
-<body>
+
 <div class="card_content">
     <form action="/alumni-update/{{$alumni->id}}" method="post" enctype="multipart/form-data">
         @csrf
