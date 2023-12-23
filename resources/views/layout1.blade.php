@@ -13,7 +13,7 @@
     <input type="checkbox" id="check">
 		<header>
     </div>
-        <a href="/logout" class="btn_logout">Logout <i class="fas fa-sign-out-alt"></i></a>
+        <a href="index.php" class="btn_logout">Logout <i class="fas fa-sign-out-alt"></i></a>
 		</header>
         "<div class='sidebar'>
       <label for='check'>
